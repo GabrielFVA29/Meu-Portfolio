@@ -47,6 +47,42 @@
             nav a { display: block; margin: 0.5rem 0; }
             header { padding: 3rem 1rem; }
         }
+        /* Estilos do Modal de Confirmação */
+        .modal-overlay {
+            display: none; /* Fica invisível até ser chamado */
+            position: fixed; 
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center; 
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #fff; 
+            padding: 2rem; 
+            border-radius: 8px; 
+            max-width: 400px;
+            text-align: center; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .modal-content h3 { margin-bottom: 1rem; color: #2c3e50; }
+
+        .modal-buttons { 
+            margin-top: 1.5rem; 
+            display: flex; 
+            gap: 1rem; 
+            justify-content: center; 
+        }
+
+        .btn-cancelar { 
+            background: #e74c3c; /* Vermelho para cancelar */
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .btn-cancelar:hover { background: #c0392b; }
     </style>
 </head>
 <body>
@@ -112,8 +148,8 @@
             <h2>Vamos Conversar?</h2>
             <p style="margin-bottom: 1.5rem;">Aqui abaixo estão a minha conta no Linkedin e no Github caso queira entrar em contato.</p>
             <div class="contact-links">
-                <a href="https://www.linkedin.com/in/gabriel-feitosa-vieira-aragao-0877b93b8/" target="_blank" class="btn" style="background: #0077b5;">LinkedIn</a>
-                <a href="https://github.com/GabrielFVA29" target="_blank" class="btn" style="background: #333;">GitHub</a>
+                <button onclick="abrirModal('LinkedIn', 'https://www.linkedin.com/in/gabriel-feitosa-vieira-aragao-0877b93b8/')" class="btn" style="background: #0077b5;">LinkedIn</button>
+                <button onclick="abrirModal('GitHub','https://github.com/GabrielFVA29')" class="btn" style="background: #333;">GitHub</button>
             </div>
         </section>
     </div>
@@ -121,6 +157,36 @@
     <footer>
         <p>&copy; 2026 GabrielFVA. Criado com HTML e CSS.</p>
     </footer>
+    <div id="janelaConfirmacao" class="modal-overlay">
+    <div class="modal-content">
+        <h3>Confirmação de Saída</h3>
+        <p id="textoModal">Você apertou para acessar a minha página, confirma?</p>
+        <div class="modal-buttons">
+            <button onclick="fecharModal()" class="btn btn-cancelar">Cancelar</button>
+            <a id="linkConfirmar" href="#" target="_blank" class="btn" style="background: #00b521;" onclick="fecharModal()">Confirmar</a>
+        </div>
+    </div>
+</div>
+    <script>
+    // Função para abrir a janela
+    function abrirModal(nomeDaRede, urlDaRede) {
+        const modal = document.getElementById('janelaConfirmacao');
+        const texto = document.getElementById('textoModal');
+        const link = document.getElementById('linkConfirmar');
+        
+        // Altera o texto com o nome da rede social
+        texto.textContent = `Você apertou para acessar o meu ${nomeDaRede}, você confirma que quer acessar a minha página do ${nomeDaRede}?`;
+        link.href = urlDaRede;
+        
+        // Mostra o modal
+        modal.style.display = 'flex';
+    }
+
+    // Função para fechar a janela
+    function fecharModal() {
+        document.getElementById('janelaConfirmacao').style.display = 'none';
+    }
+</script>
 
 </body>
 </html>
