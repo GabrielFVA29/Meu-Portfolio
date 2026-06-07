@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de GabrielFVA</title>
+    
+    <style>
+        /* Reset básico e tipografia */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { line-height: 1.6; color: #333; background-color: #f8f9fa; }
+        
+        /* Cabeçalho */
+        header { background: #2c3e50; color: #fff; padding: 4rem 1rem; text-align: center; }
+        header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        header p { font-weight: 300; font-size: 1.2rem; color: #bdc3c7; }
+        
+        /* Navegação */
+        nav { background: #1a252f; text-align: center; padding: 1rem; position: sticky; top: 0; z-index: 100; }
+        nav a { color: #fff; text-decoration: none; margin: 0 1rem; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; }
+        nav a:hover { color: #3498db; }
+        
+        /* Estrutura Principal */
+        .container { max-width: 1100px; margin: 3rem auto; padding: 0 2rem; }
+        section { margin-bottom: 4rem; background: #fff; padding: 2.5rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        h2 { color: #2c3e50; border-bottom: 3px solid #3498db; display: inline-block; padding-bottom: 0.5rem; margin-bottom: 2rem; }
+        
+        /* Grid de Projetos */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .project-card { border: 1px solid #eaeaea; padding: 1.5rem; border-radius: 8px; transition: transform 0.2s ease; }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .project-card h3 { color: #2980b9; margin-bottom: 1rem; }
+        .project-card p { font-size: 0.95rem; margin-bottom: 1rem; color: #555; }
+        .tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+        .tags span { background: #ecf0f1; font-size: 0.8rem; padding: 0.2rem 0.6rem; border-radius: 20px; color: #7f8c8d; font-weight: bold; }
+        
+        /* Botões */
+        .btn { display: inline-block; background: #3498db; color: #fff; padding: 0.6rem 1.2rem; text-decoration: none; border-radius: 4px; font-weight: bold; transition: background 0.3s; }
+        .btn:hover { background: #2980b9; color: #fff; }
+        
+        /* Contato e Rodapé */
+        .contact-links { display: flex; gap: 1rem; }
+        footer { text-align: center; padding: 2rem; background: #2c3e50; color: #bdc3c7; font-size: 0.9rem; }
+        
+        /* Responsividade Básica */
+        @media (max-width: 600px) {
+            nav a { display: block; margin: 0.5rem 0; }
+            header { padding: 3rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="inicio">
+        <h1>Gabriel Feitosa Vieira Aragão</h1>
+        <img src="c:\Users\lelaf\Dropbox\PC\Downloads\WhatsApp Image 2026-06-06 at 10.38.01.jpeg" alt="Meu rosto" style="width: 10%; border-radius: 16px; margin-bottom: 1rem;">
+        <p>Programador (Python e JavaScript)</p>
+    </header>
+
+    <nav>
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <div class="container">
+        <section id="sobre">
+            <h2>Sobre Mim</h2>
+            <p>Olá! Sou um estudante de Ciências da Computação da CESAR School e estou apto a aprender coisas novas sobre essa área. Todos os projetos mostrados são projetos de Faculdade. Na minha vida pessoal, gosto de escutar música (Geralmente Kpop, mas curto qualquer música que não tenha letras problemáticas) e jogar (Tanto videogame quanto jogos de celular). Meu objetivo principal é aprender coisas novas para o meu futuro profissional e me divertir fazendo o que eu gosto.</p>
+        </section>
+
+        <section id="projetos">
+            <h2>Meus Projetos</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <h3>As Labirintites de Um Gato</h3>
+                    <div class="tags">
+                        <span>Bitsy</span>
+                        <span>2026</span>
+                    </div>
+                    <p>Um jogo feito na plataforma Bitsy (Programa No-Code) entregável na disciplina Introdução a Computação. O Jogo narra a história de um gato que foi jogado no labirinto do quintal do seu João, onde o personagem precisa escapar. Caso queira jogar, aperte no botão abaixo!</p>
+                    <a href="https://gabriel-fva.itch.io/as-labirintites-de-um-gato" class="btn" target="_blank">Ver Projeto</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>TACTA</h3>
+                    <div class="tags">
+                        <span>Arduino</span>
+                        <span>C</span>
+                        <span>2026</span>
+                    </div>
+                    <p>Jogo físico voltado para deficientes visuais, o jogo funciona na base de vibrações, onde o jogador sente uma vibração inicial e em seguida vem três vibrações diferentes, o objetivo é responder qual das três vibrações é igual a vibração original. Estarei apresentendo junto com o meu grupo na Amostra TecDesign no dia 20/06! Clique no botão abaixo para ver nosso site!</p>
+                    <a href="https://sites.google.com/cesar.school/projeto-1-jogos-pcd-visual/home" class="btn" target="_blank">Site do Projeto</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>Hyrox Planner</h3>
+                    <div class="tags">
+                        <span>Python</span>
+                        <span>Github</span>
+                        <span>2026</span>
+                    </div>
+                    <p>Projeto entregável para a disciplina de Fundamentos da Programação. O projeto se trata de um programa que registra treinos e competições para melhorar a rotina de treino de atletas e estimulara prática de exercícios físicos, utilizando os treinos registrados. </p>
+                    <a href="https://github.com/felipeassiss/HyroxPlanner" class="btn" target="_blank">Ver Projeto</a>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contato">
+            <h2>Vamos Conversar?</h2>
+            <p style="margin-bottom: 1.5rem;">Aqui abaixo estão a minha conta no Linkedin e no Github caso queira entrar em contato.</p>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/gabriel-feitosa-vieira-aragao-0877b93b8/" target="_blank" class="btn" style="background: #0077b5;">LinkedIn</a>
+                <a href="https://github.com/GabrielFVA29" target="_blank" class="btn" style="background: #333;">GitHub</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 GabrielFVA. Criado com HTML e CSS.</p>
+    </footer>
+
+</body>
+</html>
